@@ -1,4 +1,5 @@
 import '../styles/reset.css'
+import '../styles/global.css'
 import type { AppProps } from 'next/app'
 import GlobalStyles from '../styles/GlobalStyles'
 import { Header } from '../components/Header'

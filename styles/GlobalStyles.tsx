@@ -90,7 +90,7 @@ export default function GlobalStyles() {
           }
         }
 
-        /* TYPOGRPAHY */
+        /* TYPOGRPAHY 
         h1,h2,h3,h4,h5,h6 {
           font-weight: 500;
         }
@@ -117,10 +117,30 @@ export default function GlobalStyles() {
           line-height: 1.35;
           font-weight: 400;
         }
+        */
 
         /* CUSTOM */
         .button {
           ${buttonStyle};
+        }
+
+        /* UTIL */
+        .code-wrapper {
+          text-align: start;
+          border-radius: 5px;
+          padding: 12px;
+          background-color: #f3f3f3;
+          overflow-x: scroll;
+          margin-top: 20px;
+          code {
+            font-size: 12px !important;
+            line-height: 1.25;
+            background-color: var(--bg-color);
+          }
+          * {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo,
+              monospace !important;
+          }
         }
       `}
     />

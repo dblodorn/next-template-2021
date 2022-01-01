@@ -1,17 +1,15 @@
-import { css } from "@emotion/react";
-import unified from "unified";
-import parse from "remark-parse";
-import remark2react from "remark-react";
+import { css } from '@emotion/react'
+import unified from 'unified'
+import parse from 'remark-parse'
+import remark2react from 'remark-react'
 
-type MarkdownWrapperProps = {
-  markdown?: string;
-  styleOverrides?: any;
-};
-
-export default function MarkdownWrapper({
+export const MarkDown = ({
   markdown,
   styleOverrides,
-}: MarkdownWrapperProps) {
+}: {
+  markdown?: string
+  styleOverrides?: any
+}) => {
   return (
     <article
       css={[
@@ -71,7 +69,7 @@ export default function MarkdownWrapper({
             border-radius: 5px;
             background-color: var(--bg-color);
             font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo,
-                monospace !important;
+              monospace !important;
           }
         `,
         styleOverrides,
@@ -79,5 +77,5 @@ export default function MarkdownWrapper({
     >
       {unified().use(parse).use(remark2react).processSync(markdown).result}
     </article>
-  );
+  )
 }

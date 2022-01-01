@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { NavLink } from './NavLink'
+import { NavLink } from './utils'
 
 export const Header = () => {
   return (
@@ -13,7 +13,7 @@ export const Header = () => {
         background-color: var(--white);
       `}>
         <NavLink passHref href="/">
-          <a>Logo</a>
+          <a>{process.env.NEXT_PUBLIC_APP_TITLE}</a>
         </NavLink>
         <NavLink passHref href="/about">
           <a>About</a>

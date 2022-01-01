@@ -1,27 +1,13 @@
-import styled from "@emotion/styled";
 import Head from "../components/head";
 import { PageWrapper } from "../styles/components";
-import { GetStaticProps } from "next";
+import { DeckBuilder } from "../components/deckBuilder";
 
-export default function Home({ events }: { events: any }) {
+export default function Home() {
+  
   return (
-    <IndexWrapper>
+    <PageWrapper fw={true}>
       <Head />
-      <h1>{process.env.NEXT_PUBLIC_APP_TITLE}</h1>
-    </IndexWrapper>
+      <DeckBuilder />
+    </PageWrapper>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  const calendar: any = []
-  return {
-    props: {
-      calendar
-    },
-    revalidate: 60,
-  };
-};
-
-const IndexWrapper = styled(PageWrapper)`
-  max-width: var(--content-width-xl);
-`;
